@@ -1190,19 +1190,19 @@ client.on('message', message => {
 	  if (message.author.id !== '336606008069849088') return;
 
 
-if (message.content.startsWith(prefix + 'ply')) {
-  client.user.setGame(argresult);
+if (message.content === prefix + ('ply')) {
+	client.user.setGame(argresult);
     message.channel.sendMessage(`**:white_check_mark:   ${argresult}**`)
 } else 
-if (message.content.startsWith(prefix + 'wt')) {
+if (message.content === prefix + ('wt')) {
 client.user.setActivity(argresult, {type:'WATCHING'});
     message.channel.sendMessage(`**:white_check_mark:   ${argresult}**`)
 } else 
-if (message.content.startsWith(prefix + 'ls')) {
+if (message.content === prefix + ('lts')) {
 client.user.setActivity(argresult , {type:'LISTENING'});
     message.channel.sendMessage(`**:white_check_mark:   ${argresult}**`)
 } else 
-if (message.content.startsWith(prefix + 'st')) {
+if (message.content === prefix + ('st')) {
   client.user.setGame(argresult, "https://www.twitch.tv/idk");
     message.channel.sendMessage(`**:white_check_mark:   ${argresult}**`)
 }
@@ -1215,20 +1215,20 @@ client.on('message', message => {
   var argresult = args.join(` `);
     if (message.author.id !== '171259176029257728') return;
 
-if (message.content.startsWith(prefix + 'ply')) {
-  client.user.setGame(argresult);
+if (message.content === prefix + ('ply')) {
+	client.user.setGame(argresult);
     message.channel.sendMessage(`**:white_check_mark:   ${argresult}**`)
 } else 
-if (message.content.startsWith(prefix + 'wt')) {
-client.user.setActivity(argresult, {type:'WATCHING'});
+if (message.content === prefix + ('wt')) {
+	client.user.setActivity(argresult, {type:'WATCHING'});
     message.channel.sendMessage(`**:white_check_mark:   ${argresult}**`)
 } else 
-if (message.content.startsWith(prefix + 'ls')) {
-client.user.setActivity(argresult , {type:'LISTENING'});
+if (message.content === prefix + ('lts')) {
+	client.user.setActivity(argresult , {type:'LISTENING'});
     message.channel.sendMessage(`**:white_check_mark:   ${argresult}**`)
 } else 
-if (message.content.startsWith(prefix + 'st')) {
-  client.user.setGame(argresult, "https://www.twitch.tv/idk");
+if (message.content === prefix + ('st')) {
+	client.user.setGame(argresult, "https://www.twitch.tv/idk");
     message.channel.sendMessage(`**:white_check_mark:   ${argresult}**`)
 }
 
@@ -1241,20 +1241,20 @@ client.on('message', message => {
 	  if (message.author.id !== '315477177028050945') return;
 
 
-if (message.content.startsWith(prefix + 'ply')) {
+if (message.content === prefix + ('ply')) {
   client.user.setGame(argresult);
     message.channel.sendMessage(`**:white_check_mark:   ${argresult}**`)
 } else 
-if (message.content.startsWith(prefix + 'wt')) {
-client.user.setActivity(argresult, {type:'WATCHING'});
+if (message.content === prefix + ('wt')) {
+	client.user.setActivity(argresult, {type:'WATCHING'});
     message.channel.sendMessage(`**:white_check_mark:   ${argresult}**`)
 } else 
-if (message.content.startsWith(prefix + 'ls')) {
-client.user.setActivity(argresult , {type:'LISTENING'});
+if (message.content === prefix + ('lts')) {
+	client.user.setActivity(argresult , {type:'LISTENING'});
     message.channel.sendMessage(`**:white_check_mark:   ${argresult}**`)
 } else 
-if (message.content.startsWith(prefix + 'st')) {
-  client.user.setGame(argresult, "https://www.twitch.tv/idk");
+if (message.content === prefix + ('st')) {
+	client.user.setGame(argresult, "https://www.twitch.tv/idk");
     message.channel.sendMessage(`**:white_check_mark:   ${argresult}**`)
 }
 
@@ -1268,19 +1268,20 @@ client.on('message', message => {
 	  if (message.author.id !== '343383616895713290') return;
 
 
-if (message.content.startsWith(prefix + 'ply')) {
+if (message.content === prefix + ('ply')) {
   client.user.setGame(argresult);
     message.channel.sendMessage(`**:white_check_mark:   ${argresult}**`)
 } else 
-if (message.content.startsWith(prefix + 'wt')) {
+if (message.content === prefix + ('wt')) {
 client.user.setActivity(argresult, {type:'WATCHING'});
     message.channel.sendMessage(`**:white_check_mark:   ${argresult}**`)
-} else 
+} else
+if (message.content === prefix + ('lts')) {
 if (message.content.startsWith(prefix + 'ls')) {
 client.user.setActivity(argresult , {type:'LISTENING'});
     message.channel.sendMessage(`**:white_check_mark:   ${argresult}**`)
 } else 
-if (message.content.startsWith(prefix + 'st')) {
+if (message.content === prefix + ('st')) {
   client.user.setGame(argresult, "https://www.twitch.tv/idk");
     message.channel.sendMessage(`**:white_check_mark:   ${argresult}**`)
 } else
