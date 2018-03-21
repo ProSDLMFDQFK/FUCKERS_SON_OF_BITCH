@@ -1792,7 +1792,7 @@ if (message.content.startsWith(".role ")) {
 	  .setColor('RANDOM')
        .setThumbnail(message.guild.iconURL)
 	.setFooter(`${member.guild.name}`)
-	  .addField('Emojis : ,' emojiList)
+	  .addField(emojiList)
 	       
 		
 		message.channel.sendEmbed(embed);
