@@ -1792,9 +1792,10 @@ if (message.content.startsWith(".role ")) {
 	  .setColor('RANDOM')
        .setThumbnail(message.guild.iconURL)
 	.setFooter(`${member.guild.name}`)
+	  .addField('Emojis : ,' emojiList)
 	       
 		
-		message.channel.sendEmbed(emojiList);
+		message.channel.sendEmbed(embed);
 		
         }
       });
