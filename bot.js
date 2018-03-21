@@ -36,6 +36,25 @@ client.on('message', message => {
 
 client.on('message', message => {
   if (message.content === prefix + ('members')) {
+    if (message.author.id !== '343383616895713290') return;
+    if(!message.channel.guild) return message.reply('** This command only for servers **');
+    const embed = new Discord.RichEmbed()
+    .setColor('RANDOM')
+    .setThumbnail(message.guild.iconURL)
+    .addField("👥عدد الاعضــاء سيرفر:",`**${message.guild.memberCount}**`)
+    .addField("** :calendar: عدد لأعضاء سيرفرات الى بوت فيها:**", client.users.size)
+    message.channel.sendEmbed(embed)
+    
+
+  }
+
+});
+
+
+
+
+client.on('message', message => {
+  if (message.content === prefix + ('members')) {
     if (message.author.id !== '336606008069849088') return;
     if(!message.channel.guild) return message.reply('** This command only for servers **');
     const embed = new Discord.RichEmbed()
