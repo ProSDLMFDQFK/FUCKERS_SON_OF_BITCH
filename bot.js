@@ -426,64 +426,6 @@ return message.reply("**:white_check_mark: تم فك الميوت عن الشخ�
 
 
 
-
-client.on('message', message => {	
-if(message.content == prefix + 'stats') {
-if (!message.channel.guild) return message.reply('** This command only for servers **');    
-message.channel.send({
-embed: new Discord.RichEmbed()
-.addField('Uptime', timeCon(process.uptime()), true)
-.addField('RAM Usage', `${(process.memoryUsage().rss / 1048576).toFixed()}MB`, true)
-.addField('Guild Count', client.guilds.size, true)
-.addField("**Servers:**" , client.guilds.size)
-.addField("**Users:**", client.users.size)
-.addField("**channels:**", client.channels.size)
-})
-}
-});
-
-function timeCon(time) {
-let days = Math.floor(time % 31536000 / 86400)
-let hours = Math.floor(time % 31536000 % 86400 / 3600)
-let minutes = Math.floor(time % 31536000 % 86400 % 3600 / 60)
-let seconds = Math.round(time % 31536000 % 86400 % 3600 % 60)
-days = days > 9 ? days : '0' + days
-hours = hours > 9 ? hours : '0' + hours
-minutes = minutes > 9 ? minutes : '0' + minutes
-seconds = seconds > 9 ? seconds : '0' + seconds
-return `${days > 0 ? `${days}:` : ''}${(hours || days) > 0 ? `${hours}:` : ''}${minutes}:${seconds}`
-}
-
-
-
-
-client.on('message', message => {
-	
-if (message.content.startsWith(prefix + "inviter")) {
-if(!message.channel.guild) return;
-
-        message.channel.createInvite({
-        thing: true,
-        maxUses: 5,
-        maxAge: 86400
-    }).then(invite =>
-      message.author.sendMessage(invite.url)
-    )
-    const embed = new Discord.RichEmbed()
-        .setColor("RANDOM")
-        .setDescription(`  في الخاص ${message.guild.name}تم ارسالك رابط سيرفر `)
-   .setFooter("اسم السيرفر","رابط صوره السيرفر")
-      message.channel.sendEmbed(embed).then(message => {message.delete(3000)})
-              const EmbedMalek = new Discord.RichEmbed()
-        .setColor("000000")
-        .setDescription(`هذا الرابط لخمسه مستخدمين فقط لمده اربعه وعشرين ساعه${message.guild.name} رابط سيرفر  `)
-        .setFooter("اسم السيرفر","رابط صوره السيرفر")
-      message.author.sendEmbed(EmbedMalek)
-    }
-});
-
-
-
 var cats = ["https://i.imgur.com/3Vzhklz.jpg","https://i.imgur.com/4eU1h2n.jpg","https://imgur.com/yxZ83xN.jpg","https://i.imgur.com/8P33xQ0.jpg","https://i.imgur.com/l3mTCDO.jpg","https://i.imgur.com/gjsO5tE.jpg","https://i.imgur.com/IGZAy0o.jpg","https://i.imgur.com/nBAq0ds.jpg","https://imgur.com/gemJMuU.jpg","https://i.imgur.com/1XjTm39.jpg"]
     client.on('message', message => {
         var args = message.content.split(" ").slice(1);
@@ -566,12 +508,16 @@ return;
 }
         message.guild.members.forEach(m => {
             var bc = new Discord.RichEmbed()
-            .addField('» السيرفر :', `${message.guild.name}`)
-            .addField('» المرسل : ', `${message.author.username}#${message.author.discriminator}`)
-            .addField(' » الرسالة : ', args)
-            .setColor('#ff0000')
+	    .setTitle('Broadcast From', `${message.guild.name}`)
+	        .setThumbnail(message.guild.iconURL)
+            .addField('» Server :', `${message.guild.name}`)
+            .addField('» Sender: ', `${message.author.username}#${message.author.discriminator}`)
+            .addField(' » Message : ', args)
+            .setColor('RANDOM')
             // m.send(`[${m}]`);
             m.send(`${m}`,{embed: bc});
+		.setFooter(message.author.username, message.author.avatarURL)
+    .setTimestamp()
         });
     }
     } else {
